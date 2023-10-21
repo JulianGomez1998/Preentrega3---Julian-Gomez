@@ -1,169 +1,11 @@
-//PRODUCTOS
+let productos = [];
 
-const productos = [
-    //JUJUTSU KAISEN
-    {
-        id: "jjk-00",
-        titulo: "Jujutsu Kaisen VOL 0",
-        imagen: "./img/jjk/jjk-vol0.jpeg",
-        categoria: {
-            nombre: "SHONEN",
-            id: "shonen"
-        },
-        precio: 3000,
-    },
-    {
-        id: "jjk-01",
-        titulo: "Jujutsu Kaisen VOL 1",
-        imagen: "./img/jjk/jjk-vol1.jpeg",
-        categoria: {
-            nombre: "SHONEN",
-            id: "shonen"
-        },
-        precio: 3000,
-    },
-    {
-        id: "jjk-02",
-        titulo: "Jujutsu Kaisen VOL 2",
-        imagen: "./img/jjk/jjk-vol2.jpeg",
-        categoria: {
-            nombre: "SHONEN",
-            id: "shonen"
-        },
-        precio: 3000,
-    },
-    {
-        id: "jjk-03",
-        titulo: "Jujutsu Kaisen VOL 3",
-        imagen: "./img/jjk/jjk-vol3.jpeg",
-        categoria: {
-            nombre: "SHONEN",
-            id: "shonen"
-        },
-        precio: 3000,
-    },
-    {
-        id: "jjk-04",
-        titulo: "Jujutsu Kaisen VOL 4",
-        imagen: "./img/jjk/jjk-vol4.jpeg",
-        categoria: {
-            nombre: "SHONEN",
-            id: "shonen"
-        },
-        precio: 3000,
-    },
-    {
-        id: "jjk-05",
-        titulo: "Jujutsu Kaisen VOL 5",
-        imagen: "./img/jjk/jjk-vol5.jpeg",
-        categoria: {
-            nombre: "SHONEN",
-            id: "shonen"
-        },
-        precio: 3000,
-    },
-    {
-        id: "jjk-06",
-        titulo: "Jujutsu Kaisen VOL 6",
-        imagen: "./img/jjk/jjk-vol6.jpeg",
-        categoria: {
-            nombre: "SHONEN",
-            id: "shonen"
-        },
-        precio: 3000,
-    },
-    {
-        id: "jjk-07",
-        titulo: "Jujutsu Kaisen VOL 7",
-        imagen: "./img/jjk/jjk-vol7.jpeg",
-        categoria: {
-            nombre: "SHONEN",
-            id: "shonen"
-        },
-        precio: 3000,
-    },
-    
-    //BERSERK
-    {
-        id: "brk-01",
-        titulo: "Berserk VOL 0",
-        imagen: "./img/berserk/berserk-01.jpg",
-        categoria: {
-            nombre: "SEINEN",
-            id: "seinen"
-        },
-        precio: 3000,
-    },
-    {
-        id: "brk-02",
-        titulo: "Berserk VOL 2",
-        imagen: "./img/berserk/berserk-02.jpg",
-        categoria: {
-            nombre: "SEINEN",
-            id: "seinen"
-        },
-        precio: 3000,
-    },{
-        id: "brk-03",
-        titulo: "Berserk VOL 3",
-        imagen: "./img/berserk/berserk-03.jpg",
-        categoria: {
-            nombre: "SEINEN",
-            id: "seinen"
-        },
-        precio: 3000,
-    },{
-        id: "brk-04",
-        titulo: "Berserk VOL 4",
-        imagen: "./img/berserk/berserk-04.jpg",
-        categoria: {
-            nombre: "SEINEN",
-            id: "seinen"
-        },
-        precio: 3000,
-    },
-    {
-        id: "brk-05",
-        titulo: "Berserk VOL 5",
-        imagen: "./img/berserk/berserk-05.jpg",
-        categoria: {
-            nombre: "SEINEN",
-            id: "seinen"
-        },
-        precio: 3000,
-    },
-    {
-        id: "brk-06",
-        titulo: "Berserk VOL 6",
-        imagen: "./img/berserk/berserk-06.jpg",
-        categoria: {
-            nombre: "SEINEN",
-            id: "seinen"
-        },
-        precio: 3000,
-    },
-    {
-        id: "brk-07",
-        titulo: "Berserk VOL 7",
-        imagen: "./img/berserk/berserk-07.jpg",
-        categoria: {
-            nombre: "SEINEN",
-            id: "seinen"
-        },
-        precio: 3000,
-    },
-    {
-        id: "brk-08",
-        titulo: "Berserk VOL 8",
-        imagen: "./img/berserk/berserk-08.jpg",
-        categoria: {
-            nombre: "SEINEN",
-            id: "seinen"
-        },
-        precio: 3000,
-    },
-]
-
+fetch("./js/productos.json")
+    .then(response => response.json())
+    .then(data => {
+        productos = data;
+        cargarProductos(productos);
+    })
 
 
 //EJECUCION
@@ -173,18 +15,51 @@ const contenedorProductos = document.querySelector("#contenedor-productos");
 const botonesCategorias = document.querySelectorAll(".boton-categoria");
 const tituloPrincipal = document.querySelector("#titulo-principal");
 let botonesAgregar = document.querySelectorAll(".producto-agregar");
-const productosCarro = []
 const numerito = document.querySelector("#numerito")
 
 
-function actualizarNumero () {
+let productosCarro;
+
+let productosCarroLS = localStorage.getItem("productos-en-carrito")
+
+if (productosCarroLS) {
+    productosCarro = JSON.parse(productosCarroLS);
+    actualizarNumero();
+} else {
+    productosCarro = [];
+}
+
+
+
+
+function actualizarNumero() {
     let nuevoNumero = productosCarro.reduce((acc, producto) => acc + producto.cantidad, 0);
     numerito.innerText = nuevoNumero;
 }
 
 
+function agregarAlCarrito(e) {
 
-function agregarAlCarrito (e) {
+    Toastify({
+        text: "Producto agregado",
+        duration: 3000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, red, rgb(236, 151, 151))",
+            borderRadius: "1rem",
+            textTransform: "uppercase",
+            fontSize: "0.75rem",
+        },
+        offset: {
+            x: "1.5rem", // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+            y: "1.5rem" // vertical axis - can be a number or a string indicating unity. eg: '2em'
+        },
+        onClick: function () { } // Callback after click
+    }).showToast();
+
     const idBoton = e.currentTarget.id;
     const productosAgregados = productos.find(producto => producto.id === idBoton);
 
@@ -198,18 +73,20 @@ function agregarAlCarrito (e) {
     }
 
     actualizarNumero();
+
+    localStorage.setItem("productos-en-carrito", JSON.stringify(productosCarro));
 }
 
 
-function actualizarBotonesAgregar () {
+function actualizarBotonesAgregar() {
     botonesAgregar = document.querySelectorAll(".producto-agregar");
     botonesAgregar.forEach(boton => {
         boton.addEventListener("click", agregarAlCarrito)
-        
+
     });
 }
 
-function cargarProductos (productosElegidos) {
+function cargarProductos(productosElegidos) {
     contenedorProductos.innerHTML = ""
     productosElegidos.forEach(producto => {
         const div = document.createElement("div");
@@ -231,7 +108,7 @@ function cargarProductos (productosElegidos) {
 
 
 
-cargarProductos(productos);
+
 
 botonesCategorias.forEach(boton => {
     boton.addEventListener("click", (e) => {
@@ -239,21 +116,20 @@ botonesCategorias.forEach(boton => {
         e.currentTarget.classList.add("active");
 
         if (e.currentTarget.id != "todos") {
-            const productoCategoria = productos.find(producto => producto.categoria.id === e.currentTarget.id)
+            const productoCategoria = productos.find(producto => producto.categoria.id === e.currentTarget.id);
             tituloPrincipal.innerText = productoCategoria.categoria.nombre;
 
             const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id);
-        cargarProductos(productosBoton);
+            cargarProductos(productosBoton);
         } else {
             tituloPrincipal.innerText = "Todos los productos";
             cargarProductos(productos);
         }
-        
+
     })
 
 })
 
-localStorage.setItem("productos-carro", JSON.stringify(productosCarro))
 
 
 

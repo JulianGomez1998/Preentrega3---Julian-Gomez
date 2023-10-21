@@ -1,0 +1,180 @@
+[
+    {
+        "id": "jjk-00",
+        "titulo":"Jujutsu Kaisen VOL 0",
+        "imagen": "./img/jjk/jjk-vol0.jpeg",
+        "categoria": {
+            "nombre": "SHONEN",
+            "id": "shonen"
+        },
+        "precio": 3000
+    },
+    {
+        "id": "jjk-01",
+        "titulo":"Jujutsu Kaisen VOL 1",
+        "imagen": "./img/jjk/jjk-vol1.jpeg",
+        "categoria": {
+            "nombre": "SHONEN",
+            "id": "shonen"
+        },
+        "precio": 3000
+    },
+    {
+        "id": "jjk-02",
+        "titulo":"Jujutsu Kaisen VOL 2",
+        "imagen": "./img/jjk/jjk-vol2.jpeg",
+        "categoria": {
+            "nombre": "SHONEN",
+            "id": "shonen"
+        },
+        "precio": 3000
+    },
+    {
+        "id": "jjk-03",
+        "titulo":"Jujutsu Kaisen VOL 3",
+        "imagen": "./img/jjk/jjk-vol3.jpeg",
+        "categoria": {
+            "nombre": "SHONEN",
+            "id": "shonen"
+        },
+        "precio": 3000
+    },
+    {
+        "id": "jjk-04",
+        "titulo":"Jujutsu Kaisen VOL 4",
+        "imagen": "./img/jjk/jjk-vol4.jpeg",
+        "categoria": {
+            "nombre": "SHONEN",
+            "id": "shonen"
+        },
+        "precio": 3000
+    },
+    {
+        "id": "jjk-05",
+        "titulo":"Jujutsu Kaisen VOL 5",
+        "imagen": "./img/jjk/jjk-vol5.jpeg",
+        "categoria": {
+            "nombre": "SHONEN",
+            "id": "shonen"
+        },
+        "precio": 3000
+    },
+    {
+        "id": "jjk-06",
+        "titulo":"Jujutsu Kaisen VOL 6",
+        "imagen": "./img/jjk/jjk-vol6.jpeg",
+        "categoria": {
+            "nombre": "SHONEN",
+            "id": "shonen"
+        },
+        "precio": 3000
+    },
+    {
+        "id": "jjk-07",
+        "titulo":"Jujutsu Kaisen VOL 7",
+        "imagen": "./img/jjk/jjk-vol7.jpeg",
+        "categoria": {
+            "nombre": "SHONEN",
+            "id": "shonen"
+        },
+        "precio": 3000
+    },
+    {
+        "id": "brk-01",
+        "titulo":"Berserk VOL 1",
+        "imagen": "./img/berserk/berserk-01.jpg",
+        "categoria": {
+            "nombre": "SEINEN",
+            "id": "seinen"
+        },
+        "precio": 3000
+    },
+    {
+        "id": "brk-02",
+        "titulo":"Berserk VOL 2",
+        "imagen": "./img/berserk/berserk-02.jpg",
+        "categoria": {
+            "nombre": "SEINEN",
+            "id": "seinen"
+        },
+        "precio": 3000
+    },{
+        "id": "brk-03",
+        "titulo":"Berserk VOL 3",
+        "imagen": "./img/berserk/berserk-03.jpg",
+        "categoria": {
+            "nombre": "SEINEN",
+            "id": "seinen"
+        },
+        "precio": 3000
+    },{
+        "id": "brk-04",
+        "titulo":"Berserk VOL 4",
+        "imagen": "./img/berserk/berserk-04.jpg",
+        "categoria": {
+            "nombre": "SEINEN",
+            "id": "seinen"
+        },
+        "precio": 3000
+    },
+    {
+        "id": "brk-05",
+        "titulo":"Berserk VOL 5",
+        "imagen": "./img/berserk/berserk-05.jpg",
+        "categoria": {
+            "nombre": "SEINEN",
+            "id": "seinen"
+        },
+        "precio": 3000
+    },
+    {
+        "id": "brk-06",
+        "titulo":"Berserk VOL 6",
+        "imagen": "./img/berserk/berserk-06.jpg",
+        "categoria": {
+            "nombre": "SEINEN",
+            "id": "seinen"
+        },
+        "precio": 3000
+    },
+    {
+        "id": "brk-07",
+        "titulo":"Berserk VOL 7",
+        "imagen": "./img/berserk/berserk-07.jpg",
+        "categoria": {
+            "nombre": "SEINEN",
+            "id": "seinen"
+        },
+        "precio": 3000
+    },
+    {
+        "id": "brk-08",
+        "titulo":"Berserk VOL 8",
+        "imagen": "./img/berserk/berserk-08.jpg",
+        "categoria": {
+            "nombre": "SEINEN",
+            "id": "seinen"
+        },
+        "precio": 3000
+    },
+    {
+        "id": "brk-09",
+        "titulo":"Berserk VOL 9",
+        "imagen": "./img/berserk/berserk-09.jpg",
+        "categoria": {
+            "nombre": "SEINEN",
+            "id": "seinen"
+        },
+        "precio": 3000
+    },
+    {
+        "id": "brk-10",
+        "titulo":"Berserk VOL 10",
+        "imagen": "./img/berserk/berserk-10.jpg",
+        "categoria": {
+            "nombre": "SEINEN",
+            "id": "seinen"
+        },
+        "precio": 3000
+    }
+]
